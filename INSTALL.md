@@ -5,6 +5,10 @@ Prerequisites
 -------------
 	Install the following packages:
 
+	Pipenv:
+	-----------------------
+	On linux + Mac with pip: `pip3 install pipenv`
+
 	TeX/LaTeX distribution:
 	-----------------------
 	e.g. MiKTeX (www.miktex.org), teTeX (http://www.tug.org/tetex/)
@@ -17,9 +21,9 @@ Prerequisites
 	-------------------------
 	(http://www.scipy.org/)
 
-	PIL (Python imaging library)
+	PILLOW (Python imaging library)
 	----------------------------
-	(http://www.pythonware.com/products/pil/)
+	(https://pypi.org/project/Pillow/)
 
 	PyX (Python graphics package)
 	-----------------------------

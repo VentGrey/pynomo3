@@ -14,7 +14,7 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-""" PyNomo - nomographs or nomograms with Python
+""" PyNomo3 - nomographs or nomograms with Python
 
 Pynomo is a program to create (pdf) nomographs (nomograms)
 using Python interpreter. A nomograph (nomogram) is a graphical
