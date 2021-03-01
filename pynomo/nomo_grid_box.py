@@ -26,7 +26,7 @@ optimize explicitely
 """
 from scipy.optimize import *
 from numpy import *
-from nomo_axis import *
+from .nomo_axis import *
 import time
 
 

@@ -17,11 +17,11 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from nomo_axis import *
-from nomo_axis_func import *
-from nomo_grid_box import *
-from nomo_grid import *
-from nomograph3 import *
+from .nomo_axis import *
+from .nomo_axis_func import *
+from .nomo_grid_box import *
+from .nomo_grid import *
+from .nomograph3 import *
 from numpy import *
 import scipy
 from pyx import *

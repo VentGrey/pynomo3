@@ -28,7 +28,7 @@ setup(name='PyNomo',
       url='http://pynomo.org/',
       download_url='http://sourceforge.net/project/showfiles.php?group_id=201522',
       packages=['pynomo'],
-      license='GPL',
+      license='GPL-3',
       platforms='OS Independent',
       classifiers=[
           'Development Status :: 4 - Beta',

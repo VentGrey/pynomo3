@@ -15,7 +15,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 from numpy import *
 from pyx import *
-from nomo_axis import *
+from .nomo_axis import *
 from copy import *
 from math import log
 

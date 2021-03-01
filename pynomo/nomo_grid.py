@@ -21,7 +21,7 @@ from pyx import *
 from math import *
 from scipy import *
 from numpy import *
-from nomo_axis import *
+from .nomo_axis import *
 import random
 import sys
 
