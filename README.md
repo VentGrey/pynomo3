@@ -1,7 +1,6 @@
-				PyNomo - nomographs with Python
-				###############################
+# PyNomo - nomographs with Python
 
-					http://pynomo.org
+http://pynomo.org
 
 Summary
 -------
@@ -15,14 +14,13 @@ See http://pynomo.org
 
 Installation
 ------------
-See INSTALLATION.txt
-
+See INSTALLATION.md
 
 License
 -------
 see LICENSE.txt
 
- Copyright (C) 2007-2009  Leif Roschier
+ Copyright (C) 2007-2021  Leif Roschier, Omar Purata Funes
 
  This program is free software: you
  can redistribute it and/or modify
