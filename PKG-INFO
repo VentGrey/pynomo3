@@ -1,0 +1,17 @@
+Metadata-Version: 1.0
+Name: PyNomo
+Version: 0.2.2
+Summary: PyNomo - Python Nomograms
+Home-page: http://pynomo.org/
+Author: Leif Roschier
+Author-email: lefakkomies@users.sourceforge.net
+License: GPL
+Download-URL: http://sourceforge.net/project/showfiles.php?group_id=201522
+Description: UNKNOWN
+Platform: OS Independent
+Classifier: Development Status :: 4 - Beta
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Classifier: Topic :: Multimedia :: Graphics
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: Programming Language :: Python
