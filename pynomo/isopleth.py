@@ -112,7 +112,7 @@ class Isopleth_Wrapper(object):
             atom_stack_12=[atoms[0],atoms[1],atoms[4]] # 4 = ref line
             atom_stack_34=[atoms[2],atoms[3],atoms[4]]
             # tag the reference line
-            atoms[4].params['tag']='ref_type4'+`self.ref_tag_number`
+            atoms[4].params['tag'] = 'ref_type4' + repr(self.ref_tag_number)
             self.ref_tag_number=self.ref_tag_number+1
             # make blocks
             block_para_12=copy.deepcopy(block_para)
