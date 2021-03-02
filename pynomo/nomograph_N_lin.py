@@ -38,7 +38,7 @@ class Nomograph_N_lin:
         self.gamma3=1.0
         try:
             {'4': self._make_4_,
-             '5': self._make_5_}[`N`]()
+             '5': self._make_5_}[repr(N)]()
         except KeyError:
             self._make_N_()
             #print "N=%i is not defined" % N

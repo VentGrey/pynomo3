@@ -33,8 +33,8 @@ E_C=2.0*k_b
 e=1.3806504e-19
 T=t*E_C/k_b
 
-d_q = 2.0*(3.0*R_sigma/Z_tr+Z_tr/Z_T)*sqrt(k_b*T_0*Z_T)/(2.0*0.41*t**(-1.74)*0.9*E_C/e**2)/e
-print "for testing...d_q: %g"%d_q
+d_q = 2.0*(3.0*R_sigma/Z_tr+Z_tr/Z_T)* sqrt(k_b*T_0*Z_T)/(2.0*0.41*t**(-1.74)*0.9*E_C/e**2)/e
+print("for testing...d_q: %g"%d_q)
 
 def f_dq(q):
     return -log(q*1e-6)-14.0 # additional const for helping scale alignment

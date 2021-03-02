@@ -47,6 +47,7 @@ class Nomograph3:
         value of variable (u,v or w) corresponds to the coordinate (x or y). See eq.37,a
         in Allcock. We take \alpha_1=1.
         """
+
         # to make expressions shorter
         vv=variable_value
         cv=coord_value
