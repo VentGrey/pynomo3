@@ -17,7 +17,9 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from .nomo_axis import *
+from .nomo_axis import Nomo_Axis
+import pyx
+import numpy as np
 
 class Circ_Scale:
     """
@@ -42,16 +44,16 @@ class Circ_Scale:
                              'grid_length_2':0.5/4,
                              'grid_length_3':0.4/4,
                              'grid_length_4':0.3/4,
-                             'text_size': text.size.scriptsize,
-                             'text_size_0': text.size.tiny,
-                             'text_size_1': text.size.tiny,
-                             'text_size_2': text.size.tiny,
-                             'text_size_3': text.size.tiny,
-                             'text_size_4': text.size.tiny,
-                             'text_size_log_0': text.size.tiny,
-                             'text_size_log_1': text.size.tiny,
-                             'text_size_log_2': text.size.tiny,
-                             'text_size_manual': text.size.tiny,
+                             'text_size': pyx.text.size.scriptsize,
+                             'text_size_0': pyx.text.size.tiny,
+                             'text_size_1': pyx.text.size.tiny,
+                             'text_size_2': pyx.text.size.tiny,
+                             'text_size_3': pyx.text.size.tiny,
+                             'text_size_4': pyx.text.size.tiny,
+                             'text_size_log_0': pyx.text.size.tiny,
+                             'text_size_log_1': pyx.text.size.tiny,
+                             'text_size_log_2': pyx.text.size.tiny,
+                             'text_size_manual': pyx.text.size.tiny,
                              'text_distance_0':1.0/4,
                              'text_distance_1':1.0/4,
                              'text_distance_2':1.0/4,
