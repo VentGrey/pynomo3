@@ -245,20 +245,20 @@ class Circ_Block(object):
         dx=-width/2.0*dx0/np.sqrt(dx0**2+dy0**2)
         dy=-width/2.0*dy0/np.sqrt(dx0**2+dy0**2)
         p=pyx.path.line(x1+dx,y1+dy,x+dx,y+dy)
-        p.append(pyx.lineto(x-dx,y-dy))
+        p.append(pyx.path.lineto(x - dx, y - dy))
         p.append(pyx.path.lineto(x1-dx,y1-dy))
         p.append(pyx.path.closepath())
         p1=pyx.deformer.smoothed(width).deform(p)
         return p1
 
 
-    def _draw_center_circle_(self,radius,ccanvas):
+    def _draw_center_circle_(self, radius, ccanvas):
         """
         draws circle
         """
-        ccanvas.stroke(path.circle(0, 0, radius), [style.linewidth.thin])
-        ccanvas.stroke(path.line(-radius, 0,radius,0), [style.linewidth.thin])
-        ccanvas.stroke(path.line(0,-radius, 0,radius), [style.linewidth.thin])
+        ccanvas.stroke(pyx.path.circle(0, 0, radius), [pyx.style.linewidth.thin])
+        ccanvas.stroke(pyx.path.line(-radius, 0,radius,0), [pyx.style.linewidth.thin])
+        ccanvas.stroke(pyx.path.line(0,-radius, 0,radius), [pyx.style.linewidth.thin])
 
     def _draw_title_ends_(self,params):
         """
@@ -345,16 +345,16 @@ class Circ_Block_Type_1(Circ_Block):
                              'grid_length_2':0.4/4,
                              'grid_length_3':0.3/4,
                              'grid_length_4':0.2/4,
-                             'text_size': text.size.scriptsize,
-                             'text_size_0': text.size.tiny,
-                             'text_size_1': text.size.tiny,
-                             'text_size_2': text.size.tiny,
-                             'text_size_3': text.size.tiny,
-                             'text_size_4': text.size.tiny,
-                             'text_size_log_0': text.size.tiny,
-                             'text_size_log_1': text.size.tiny,
-                             'text_size_log_2': text.size.tiny,
-                             'text_size_manual': text.size.small,
+                             'text_size': pyx.text.size.scriptsize,
+                             'text_size_0': pyx.text.size.tiny,
+                             'text_size_1': pyx.text.size.tiny,
+                             'text_size_2': pyx.text.size.tiny,
+                             'text_size_3': pyx.text.size.tiny,
+                             'text_size_4': pyx.text.size.tiny,
+                             'text_size_log_0': pyx.text.size.tiny,
+                             'text_size_log_1': pyx.text.size.tiny,
+                             'text_size_log_2': pyx.text.size.tiny,
+                             'text_size_manual': pyx.text.size.small,
                              'text_distance_0':1.0/4,
                              'text_distance_1':1.0/4,
                              'text_distance_2':1.0/4,
@@ -426,27 +426,27 @@ class Circ_Block_Type_1(Circ_Block):
         """
         makes the real funcs
         """
-        self.func_F1 = lambda u:self.f1_params['radius']*math.cos(self.f1_params['circ_sign']*self.f1_params['function'](u)*self.scaling+self.offset_f1)
-        self.func_G1 = lambda u:self.f1_params['radius']*math.sin(self.f1_params['circ_sign']*self.f1_params['function'](u)*self.scaling+self.offset_f1)
-        self.func_F2 = lambda u:self.f2_params['radius']*math.cos(self.f2_params['circ_sign']*self.f2_params['function'](u)*self.scaling+self.offset_f2)
-        self.func_G2 = lambda u:self.f2_params['radius']*math.sin(self.f2_params['circ_sign']*self.f2_params['function'](u)*self.scaling+self.offset_f2)
+        self.func_F1 = lambda u:self.f1_params['radius']*np.cos(self.f1_params['circ_sign']*self.f1_params['function'](u)*self.scaling+self.offset_f1)
+        self.func_G1 = lambda u:self.f1_params['radius']*np.sin(self.f1_params['circ_sign']*self.f1_params['function'](u)*self.scaling+self.offset_f1)
+        self.func_F2 = lambda u:self.f2_params['radius']*np.cos(self.f2_params['circ_sign']*self.f2_params['function'](u)*self.scaling+self.offset_f2)
+        self.func_G2 = lambda u:self.f2_params['radius']*np.sin(self.f2_params['circ_sign']*self.f2_params['function'](u)*self.scaling+self.offset_f2)
         self.angle_2_min=self.f2_params['circ_sign']*self.f2_params['function'](self.f2_params['u_min'])*self.scaling+self.offset_f2
         self.angle_2_max=self.f2_params['circ_sign']*self.f2_params['function'](self.f2_params['u_max'])*self.scaling+self.offset_f2
         if self.angle_2_max<self.angle_2_min:
             self.angle_2_max,self.angle_2_min=self.angle_2_min,self.angle_2_max
         self.angle_2_min=self.angle_2_min-self.params['rot_scale_extra_angle']
         self.angle_2_max=self.angle_2_max+self.params['rot_scale_extra_angle']
-        self.func_F3 = lambda u:self.f3_params['radius']*math.cos(self.f3_params['circ_sign']*self.f3_params['function'](u)*self.scaling+self.offset_f3)
-        self.func_G3 = lambda u:self.f3_params['radius']*math.sin(self.f3_params['circ_sign']*self.f3_params['function'](u)*self.scaling+self.offset_f3)
-        self.arrow_F = lambda u:(self.f3_params['radius']-0.05)*math.cos(u+self.offset_f2+self.offset_f3)
-        self.arrow_G = lambda u:(self.f3_params['radius']-0.25)*math.sin(u+self.offset_f2+self.offset_f3)
+        self.func_F3 = lambda u:self.f3_params['radius']*np.cos(self.f3_params['circ_sign']*self.f3_params['function'](u)*self.scaling+self.offset_f3)
+        self.func_G3 = lambda u:self.f3_params['radius']*np.sin(self.f3_params['circ_sign']*self.f3_params['function'](u)*self.scaling+self.offset_f3)
+        self.arrow_F = lambda u:(self.f3_params['radius']-0.05)*np.cos(u+self.offset_f2+self.offset_f3)
+        self.arrow_G = lambda u:(self.f3_params['radius']-0.25)*np.sin(u+self.offset_f2+self.offset_f3)
         self.arrow_angle=(self.offset_f2+self.offset_f3)*180/np.pi
         self.arrow_radius=self.f3_params['radius']-0.05
     def draw(self,ccanvas,rot_angle=0.0):
         """
         draws the scales
         """
-        rotating_canvas = canvas.canvas()
+        rotating_canvas = pyx.canvas.canvas()
         self.draw_oblique_rotator_edge(rotating_canvas)
         self._draw_(self.f1_params,self.func_F1,self.func_G1,ccanvas)
         self._draw_(self.f2_params,self.func_F2,self.func_G2,rotating_canvas)
@@ -458,13 +458,13 @@ class Circ_Block_Type_1(Circ_Block):
         self._draw_circle_(self.f1_params['radius']+1,ccanvas)
         self._draw_center_circle_(0.2,ccanvas)
         # insert subcanvas into canvas
-        ccanvas.insert(rotating_canvas, [trafo.rotate(rot_angle)])
+        ccanvas.insert(rotating_canvas, [pyx.trafo.rotate(rot_angle)])
 
     def draw_slide(self,ccanvas,rot_angle=0.0):
         """
         draws the rotating (transparent)
         """
-        rotating_canvas = canvas.canvas()
+        rotating_canvas = pyx.canvas.canvas()
         self.draw_oblique_rotator_edge(ccanvas)
         self._draw_(self.f2_params,self.func_F2,self.func_G2,rotating_canvas)
         self._draw_arrow_(self.arrow_F,self.arrow_G,self.arrow_angle,
@@ -475,7 +475,7 @@ class Circ_Block_Type_1(Circ_Block):
         self._draw_circle_(self.f1_params['radius']+1,ccanvas)
         self._draw_center_circle_(0.2,ccanvas)
         # insert subcanvas into canvas
-        ccanvas.insert(rotating_canvas, [trafo.rotate(rot_angle)])
+        ccanvas.insert(rotating_canvas, [pyx.trafo.rotate(rot_angle)])
 
     def draw_oblique_rotator_edge(self,ccanvas):
         """
@@ -486,14 +486,14 @@ class Circ_Block_Type_1(Circ_Block):
                             self.arrow_radius)
         pie_path=self._pie_(self.angle_2_min,self.angle_2_max,
                             self.f2_params['radius'])
-        circle_path=path.circle(0, 0, self.params['inner_circle_radius'])
+        circle_path=pyx.path.circle(0, 0, self.params['inner_circle_radius'])
         #ccanvas.stroke(pie_path,[deco.filled([color.cmyk.Gray])])
         #ccanvas.stroke(bar_path,[deco.filled([color.cmyk.Gray])])
         #ccanvas.stroke(circle_path,[deco.filled([color.cmyk.Gray])])
         p1=self._union_paths_(circle_path,pie_path)
         p2=self._union_paths_(bar_path,p1)
-        p3=deformer.smoothed(self.params['rotator_fillet'],obeycurv=0).deform(p2)
-        ccanvas.fill(p3, [color.gray(0.95)])
+        p3=pyx.deformer.smoothed(self.params['rotator_fillet'],obeycurv=0).deform(p2)
+        ccanvas.fill(p3, [pyx.color.gray(0.95)])
         ccanvas.stroke(p3)
         self._draw_center_circle_(0.2,ccanvas)
 
@@ -501,14 +501,14 @@ class Circ_Block_Type_1(Circ_Block):
         """
         draws the background
         """
-        rotating_canvas = canvas.canvas()
+        rotating_canvas = pyx.canvas.canvas()
         self._draw_(self.f1_params,self.func_F1,self.func_G1,ccanvas)
         self._draw_(self.f3_params,self.func_F3,self.func_G3,ccanvas)
         self._draw_circle_(self.f1_params['radius']+1,ccanvas)
         self._draw_center_circle_(0.2,ccanvas)
 
 if __name__=='__main__':
-    c = canvas.canvas()
+    c = pyx.canvas.canvas()
     appear={
            'function':lambda u:u,
            'u_min':1.0,
@@ -542,9 +542,9 @@ if __name__=='__main__':
     circ_scale_1.draw()
     c.writePDFfile("test_circ")
 
-    cc=canvas.canvas()
-    cc_slide=canvas.canvas()
-    cc_bg=canvas.canvas()
+    cc=pyx.canvas.canvas()
+    cc_slide=pyx.canvas.canvas()
+    cc_bg=pyx.canvas.canvas()
     para_1={'function':lambda u:3*u,
             'title':'F1',
             'radius':8,
