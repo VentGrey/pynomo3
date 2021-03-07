@@ -33,7 +33,7 @@ for filename in filelist:
         tic=time.time()
         print("************************************")
         print("executing %s"%filename)
-        execfile(filename)
+        exec(open(filename).read())
         toc=time.time()
         print('%3.1f s has elapsed for %s'%(toc-tic,filename))
         print("------------------------------------")
