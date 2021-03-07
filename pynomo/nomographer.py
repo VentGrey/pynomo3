@@ -204,10 +204,10 @@ class Nomographer:
         self.blocks=blocks  # save for debugging
         for block in params['block_params']:
             if block['debug']:
-                print "##### SINGLE BLOCK PARAMS #######"
+                print("##### SINGLE BLOCK PARAMS #######")
                 pprint.pprint(block)
         if params['debug']:
-            print "##### MAIN PARAMS #######"
+            print("##### MAIN PARAMS #######")
             pprint.pprint(params)
 
     def _make_grid_(self,params,c):

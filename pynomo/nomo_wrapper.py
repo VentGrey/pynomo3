@@ -169,7 +169,7 @@ class Nomo_Wrapper:
              'polygon':self._do_polygon_trafo_,
              'rotate': self._do_rotate_trafo_}[method](params)
         except KeyError:
-            print "Wrong transformation identifier"
+            print("Wrong transformation identifier")
 
         #self.alpha1,self.beta1,self.gamma1,\
         #self.alpha2,self.beta2,self.gamma2,\
@@ -276,7 +276,7 @@ class Nomo_Wrapper:
                             and not atom2.params['aligned']: # align only once
                                 #print idx1
                                 #print idx2
-                                print "Aligning with tag %s"%atom1.params['tag']
+                                print("Aligning with tag %s"%atom1.params['tag'])
                                 alpha1,beta1,gamma1,alpha2,beta2,gamma2,alpha3,beta3,gamma3=\
                                 self._find_trafo_2_atoms_(atom1,atom2)
                                 block2.add_transformation(alpha1,beta1,gamma1,
@@ -913,7 +913,7 @@ class Nomo_Block_Type_3(Nomo_Block):
             if len(self.reference_titles)>=idx:
                 ref_para['title']=self.reference_titles[idx-1]
             else:
-                ref_para['title']='R$_'+`idx`+'$'
+                ref_para['title']='R$_'+repr(idx)+'$'
             self.ref_params.append(ref_para)
 
     def _makeDoX_(self,value):
@@ -2528,7 +2528,7 @@ class Nomo_Atom:
             tick_levels=0,tick_text_levels=0,
             side=p['tick_side'],axis_appear=p)
         if p['debug']:
-            print "##### SINGLE AXIS PARAMS #######"
+            print("##### SINGLE AXIS PARAMS #######")
             pprint.pprint(p)
 
 
@@ -2634,7 +2634,7 @@ class Nomo_Atom_Grid(Nomo_Atom):
         gridi=Nomo_Grid(func_f=self.give_x_grid,func_g=self.give_y_grid,
                         canvas=canvas,data=self.params)
         if self.params['debug']:
-            print "##### SINGLE AXIS PARAMS #######"
+            print("##### SINGLE AXIS PARAMS #######")
             pprint.pprint(self.params)
 
 if __name__=='__main__':

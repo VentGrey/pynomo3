@@ -582,7 +582,7 @@ if __name__=='__main__':
     tic = time.time()
     test=Nomo_Grid_Box(params=params)
     toc = time.time()
-    print toc-tic,' has elapsed'
+    print(toc-tic,' has elapsed')
 
 
 

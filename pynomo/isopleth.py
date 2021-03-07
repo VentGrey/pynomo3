@@ -72,7 +72,7 @@ class Isopleth_Wrapper(object):
             ref_atoms=block.atom_stack[N:(N+ref_N)]
             # set ref axes
             for idx,ref_atom in enumerate(ref_atoms):
-                ref_atom.params['tag']='ref'+`idx`+`self.ref_tag_number`
+                ref_atom.params['tag']='ref'+repr(idx)+repr(self.ref_tag_number)
             self.ref_tag_number=self.ref_tag_number+1
             atoms=block.atom_stack[:N]
             atom_stack_start=[atoms[0],atoms[1],ref_atoms[0]]
@@ -526,7 +526,7 @@ class Isopleth_Block(object):
         if not re.search("dashdotted", line_style ,re.IGNORECASE)==None:
             return style.linestyle.dashdotted
         # no match return default
-        print "unknown linestyle: %s"%line_style
+        print("unknown linestyle: %s"%line_style)
         return style.linestyle.dashed
 
     def parse_linewidth(self,line_width):
@@ -558,7 +558,7 @@ class Isopleth_Block(object):
         if not re.search("normal", line_width,re.IGNORECASE)==None:
             return style.linewidth.normal
         # no match return default
-        print "unknown linewidth: %s"%line_width
+        print("unknown linewidth: %s"%line_width)
         return style.linewidth.normal
 
     def parse_color(self,color_str):
@@ -702,7 +702,7 @@ class Isopleth_Block(object):
         if re.match("White", color_str,re.IGNORECASE):
             return color.cmyk.White
         #default
-        print "unknown color: %s"%color
+        print("unknown color: %s"%color)
         return color.cmyk.Black
 
     def parse_isopleth_params(self,params):
