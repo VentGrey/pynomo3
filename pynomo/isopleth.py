@@ -20,7 +20,7 @@ import math
 from pyx import *
 import copy, re
 from scipy.optimize import *
-from scipy import arange
+from numpy import arange
 
 class Isopleth_Wrapper(object):
     """
