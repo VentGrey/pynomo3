@@ -97,12 +97,12 @@ class Circ_Scale:
         angle_min=self.circ_appear['angle_min']
         angle_max=self.circ_appear['angle_max']
         if self.circ_appear['circ_scaling']==None:
-            scaling=(angle_max-angle_min)/(func(u_max)-func(u_min))*math.pi/180.0
+            scaling=(angle_max-angle_min)/(func(u_max)-func(u_min))*np.pi/180.0
         else:
             scaling=self.circ_appear['circ_scaling']
-        offset=-func(u_min)*scaling+angle_min*math.pi/180.0
-        self.func_f = lambda u:radius*math.cos(func(u)*scaling+offset)
-        self.func_g = lambda u:radius*math.sin(func(u)*scaling+offset)
+        offset=-func(u_min) * scaling + angle_min * np.pi/180.0
+        self.func_f = lambda u:radius * np.cos(func(u) * scaling + offset)
+        self.func_g = lambda u:radius * np.sin(func(u) * scaling + offset)
         if self.circ_appear['angle_tick_direction']=='inner':
             self.side='left'
         else:
